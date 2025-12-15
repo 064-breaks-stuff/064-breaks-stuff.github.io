@@ -1,1 +1,1 @@
-In this project I will learn to build a portfolio website.
+In this project I will build my portfolio website.
