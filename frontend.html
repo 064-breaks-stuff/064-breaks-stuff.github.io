@@ -482,52 +482,52 @@
             font-size: 0.95rem;
         }
 
-        /* Note dropdown */
-        .note-details {
-        background: var(--color-light);
-        border-radius: 12px;
-        padding: 1rem 1.5rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        max-width: 800px;
-        margin: 1.5rem auto 0 auto;
+        /* Header dropdown - compact inline version */
+        .header-dropdown {
+        background: rgba(50, 184, 198, 0.08);
+        border: 1px solid rgba(50, 184, 198, 0.2);
+        border-radius: 20px;
+        padding: 0.5rem 0.75rem;
+        min-width: 140px;
         }
 
-        .note-summary {
+        .header-summary {
         cursor: pointer;
         font-weight: 600;
         color: var(--color-primary);
+        font-size: 0.85rem;
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.25rem;
+        padding: 0;
+        margin: 0;
         }
 
-        .note-summary:hover {
-        opacity: 0.8;
-        }
-
-        /* Remove default arrow in some browsers */
-        .note-summary::-webkit-details-marker {
+        .header-summary::-webkit-details-marker {
         display: none;
         }
 
-        /* Custom arrow */
-        .note-summary::before {
+        .header-summary::before {
         content: "▸";
-        display: inline-block;
+        font-size: 0.75rem;
         transition: transform 0.2s ease;
-        font-size: 0.9rem;
         }
 
-        /* Rotate arrow when open */
-        .note-details[open] .note-summary::before {
+        .header-dropdown[open] .header-summary::before {
         transform: rotate(90deg);
         }
 
-        .note-content {
-        margin-top: 0.75rem;
-        color: var(--color-text-secondary);
-        font-size: 0.95rem;
+        .header-content {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background: var(--color-light);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .header-dropdown:hover {
+        background: rgba(50, 184, 198, 0.12);
         }
 
         /* Footer */
@@ -958,21 +958,26 @@
         </section>
 
         <section id="note">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
             <h2>Note</h2>
-
-            <details class="note-details">
-                <summary class="note-summary">
-                Read this before you scroll
-                </summary>
-                <div class="note-content">
-                <p>
-                    This portfolio is a live snapshot of my work; many projects are in progress and
-                    will change frequently. If something looks incomplete, it probably means I am still
-                    iterating on it.
+            
+            <!-- Dropdown right next to header -->
+            <details class="header-dropdown">
+            <summary class="header-summary">
+                Important ⚠️
+            </summary>
+            <div class="header-content">
+                <p style="margin: 0.5rem 0; font-size: 0.95rem;">
+                This portfolio is live - projects update frequently. Incomplete = In Progress.
                 </p>
-                </div>
+            </div>
             </details>
+        </div>
+
+        <!-- Optional: Add regular content below if needed -->
+        <p class="section-subtitle">Things you should know before exploring</p>
         </section>
+
 
     </main>
 
